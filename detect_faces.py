@@ -10,15 +10,17 @@ MODEL_LINK = (
 MODEL_PATH = "yolov8l-face.pt"
 MAX_OUTPUT = 10
 
-model = YOLO(MODEL_PATH)
-
 
 def check_and_download_model():
     if os.path.exists(MODEL_PATH):
-        return
+        return MODEL_PATH
     response = requests.get(MODEL_LINK, timeout=60)
     with open(MODEL_PATH, "wb") as f:
         f.write(response.content)
+    return MODEL_PATH
+
+
+model = YOLO(check_and_download_model())
 
 
 def adjust_box(b, image_shape, margin=10):

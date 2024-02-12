@@ -1,5 +1,5 @@
 import gradio as gr
-from detect_faces import MAX_OUTPUT, check_and_download_model, detect_faces
+from detect_faces import MAX_OUTPUT, detect_faces
 
 
 def process_image(input_image, box_margin):
@@ -21,5 +21,4 @@ iface = gr.Interface(
     allow_flagging="never",
     live=True,
 )
-check_and_download_model()
 iface.launch()
