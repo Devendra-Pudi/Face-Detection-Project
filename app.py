@@ -10,11 +10,26 @@ def process_image(input_image, box_margin):
     return output_images
 
 
-iface = gr.Interface(
+from_file = gr.Interface(
     fn=process_image,
     inputs=[gr.Image(type="filepath"), gr.Slider(0, 40)],
     outputs=gr.Gallery(height="100%", label="Faces"),
     allow_flagging="never",
     live=True,
 )
-iface.launch()
+
+from_camera = gr.Interface(
+    fn=process_image,
+    inputs=[
+        gr.Image(sources=["webcam"], streaming=True, type="filepath"),
+        gr.Slider(0, 40),
+    ],
+    outputs=gr.Gallery(height="100%", label="Faces"),
+    allow_flagging="never",
+    live=True,
+)
+
+
+tabs = gr.TabbedInterface([from_file, from_camera], ["From File", "From Camera"])
+
+tabs.launch()
