@@ -8,7 +8,6 @@ MODEL_LINK = (
     "https://github.com/akanametov/yolov8-face/releases/download/v0.0.0/yolov8l-face.pt"
 )
 MODEL_PATH = "yolov8l-face.pt"
-MAX_OUTPUT = 10
 
 
 def check_and_download_model():
@@ -46,6 +45,7 @@ def detect_faces(image, box_margin=0):
         coords = box.xyxy[0]
         coords = adjust_box(coords, orimg.size, margin=box_margin)
         crop = orimg.crop(coords)
-        crop = crop.resize((512, 512))
-        faces.append(crop)
+        prob = float(box.conf * 100)
+        prob = f"{prob:.2f}%"
+        faces.append((crop, prob))
     return faces
