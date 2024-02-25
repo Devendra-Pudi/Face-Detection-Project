@@ -27,6 +27,7 @@ from_camera = gr.Interface(
     outputs=gr.Gallery(height="100%", label="Faces"),
     allow_flagging="never",
     live=True,
+    api_name="predict_faces",
 )
 
 
