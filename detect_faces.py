@@ -3,6 +3,7 @@ import os
 import requests
 from PIL import Image
 from functools import lru_cache
+import torch
 
 MODEL_LINK = (
     "https://github.com/akanametov/yolov8-face/releases/download/v0.0.0/yolov8l-face.pt"
@@ -20,7 +21,8 @@ def check_and_download_model():
 
 
 model = YOLO(check_and_download_model())
-model.to("0")
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+model.to(device)
 
 
 def adjust_box(b, image_shape, margin=10):
