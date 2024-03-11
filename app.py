@@ -1,7 +1,9 @@
+import spaces
 import gradio as gr
 from detect_faces import detect_faces
 
 
+@spaces.GPU
 def process_image(input_image, box_margin):
     if input_image is None:
         return []

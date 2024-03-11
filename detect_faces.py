@@ -20,6 +20,7 @@ def check_and_download_model():
 
 
 model = YOLO(check_and_download_model())
+model.to("0")
 
 
 def adjust_box(b, image_shape, margin=10):
