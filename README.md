@@ -1,47 +1,98 @@
+<div align="center">
 
-# Face Detection Project
+# 👤 Face Detection Project
+### Real-time face detection using YOLO + Gradio
 
-This project implements real-time face detection using the YOLO (You Only Look Once) model, integrated with a Gradio interface for ease of use.
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org)
+[![YOLO](https://img.shields.io/badge/YOLO-00FFFF?style=for-the-badge&logo=yolo&logoColor=black)](https://ultralytics.com)
+[![Gradio](https://img.shields.io/badge/Gradio-FF7C00?style=for-the-badge)](https://gradio.app)
+[![Stars](https://img.shields.io/github/stars/Devendra-Pudi/Face-Detection-Project?style=for-the-badge)](https://github.com/Devendra-Pudi/Face-Detection-Project/stargazers)
 
-## Features
+> *Upload an image. Detect faces instantly with state-of-the-art YOLO — no setup friction.*
 
-- Real-time face detection using YOLO.
-- User-friendly interface powered by Gradio.
-- Modular codebase with separate scripts for detection and application logic.
+</div>
 
-## Installation
+---
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Devendra-Pudi/Face-Detection-Project.git
-   ```
+## 📖 Overview
 
-2. Navigate to the project directory:
-   ```bash
-   cd Face-Detection-Project
-   ```
+**Face Detection Project** is a computer vision application that performs real-time face detection using the **YOLO (You Only Look Once)** deep learning model. The project is wrapped in a **Gradio** web interface, making it easy to upload images and visualize detection results without any frontend coding.
 
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+---
 
-## Usage
+## ✨ Features
 
-Run the application using the following command:
+- 🚀 **YOLO-based detection** — fast and highly accurate face localization
+- 🖼️ **Gradio UI** — upload images directly from the browser, no CLI needed
+- 🧩 **Modular design** — clean separation between detection logic and application layer
+- 📦 **Easy to extend** — swap the YOLO model or add video stream support
+- 🔧 **Simple installation** — one requirements file, three steps to run
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Language | Python |
+| Detection Model | YOLO (Ultralytics) |
+| Computer Vision | OpenCV |
+| UI Framework | Gradio |
+| Hardware Support | CPU & GPU (auto-detect) |
+
+---
+
+## 🚀 Getting Started
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/Devendra-Pudi/Face-Detection-Project.git
+cd Face-Detection-Project
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the app
 python app.py
 ```
 
-This will launch the Gradio interface in your default web browser, allowing you to upload images and perform face detection.
+The Gradio interface will launch automatically in your default browser.
 
-## Project Structure
+---
 
-- `app.py`: Main application script that launches the Gradio interface.
-- `detect_faces.py`: Contains the logic for detecting faces using the YOLO model.
-- `requirements.txt`: Lists all the Python dependencies required to run the project.
+## 📁 Project Structure
 
-## License
+```
+Face-Detection-Project/
+├── app.py              # Gradio app — launches the web interface
+├── detect_faces.py     # Core YOLO face detection logic
+└── requirements.txt    # Python dependencies
+```
 
-This project is open-source and available under the [MIT License](LICENSE).
+---
+
+## 🧪 How It Works
+
+1. User uploads an image via the Gradio interface
+2. `detect_faces.py` runs YOLO inference on the image
+3. Bounding boxes are drawn around detected faces
+4. The annotated image is returned to the UI in real-time
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+<div align="center">
+
+Built with 👁️ by [Devendra Prasad Pudi](https://github.com/Devendra-Pudi)
+
+⭐ Star this repo if you found it useful!
+
+</div>
